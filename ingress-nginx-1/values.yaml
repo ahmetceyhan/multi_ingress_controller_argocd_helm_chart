@@ -1,0 +1,11 @@
+ingress-nginx: 
+  controller: 
+    ingressClass: ingress-nginx-1
+    ingressClassResource: 
+      name: ingress-nginx-1
+      controllerValue: "k8s.io/ingress-nginx-1"
+    service:
+      type: LoadBalancer
+  labels:
+    - "app.kubernetes.io/name: ingress-nginx-1"
+    - "app.kubernetes.io/part-of: ingress-nginx-1"
