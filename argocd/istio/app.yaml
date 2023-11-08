@@ -23,7 +23,7 @@ spec:
         helm:
           valueFiles:
             - values.yaml
-        path: .
+        path: /istio-demo
         repoURL: https://github.com/ahmetceyhan/multi_ingress_controller_argocd_helm_chart.git
         targetRevision: HEAD
       syncPolicy:
