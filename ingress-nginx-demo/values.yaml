@@ -1,0 +1,10 @@
+ingress-nginx:
+  controller:
+    replicaCount: 1
+    ingressClass: ingress-nginx-demo
+    ingressClassResource:
+      name: ingress-nginx-demo
+      controllerValue: "k8s.io/ingress-nginx-demo"
+  labels:
+    - "app.kubernetes.io/name: ingress-nginx-demo"
+    - "app.kubernetes.io/part-of: ingress-nginx-demo"

@@ -1,0 +1,15 @@
+ingress-nginx:
+  controller:
+    replicaCount: 1
+    ingressClass: ingress-nginx-demo2
+    ingressClassResource:
+      name: ingress-nginx-demo2
+      controllerValue: "k8s.io/ingress-nginx-demo2"
+    service:
+      type: NodePort
+      nodePorts:
+        http: 31080
+        https: 31443
+  labels:
+    - "app.kubernetes.io/name: ingress-nginx-demo2"
+    - "app.kubernetes.io/part-of: ingress-nginx-demo2"
