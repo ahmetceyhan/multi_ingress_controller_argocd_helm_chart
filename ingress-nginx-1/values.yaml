@@ -1,6 +1,6 @@
 ingress-nginx: 
   controller: 
-    ingressClass: ingress-nginx-1
+    ingressClass: ingress-nginx
     ingressClassResource: 
       name: ingress-nginx-1
       controllerValue: "k8s.io/ingress-nginx-1"
