@@ -2,5 +2,3 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: ingress-nginx-demo
-  labels:
-    app.kubernetes.io/name: ingress-nginx-demo

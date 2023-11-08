@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ingress-nginx-demo2
+  name: vault-demo
