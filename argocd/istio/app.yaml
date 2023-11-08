@@ -1,36 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
   name: istio-istiod
-  namespace: argocd
 spec:
-  generators:
-    - clusters: {}
-  template:
-    metadata:
-      name: istio-istiod
-    spec:
-      destination:
-        namespace: istio-system
-        server: https://kubernetes.default.svc
-      ignoreDifferences:
-        - jsonPointers:
-            - /imagePullSecrets
-            - /secrets
-          kind: ServiceAccount
-      project: istio-system
-      source:
-        helm:
-          valueFiles:
-            - values.yaml
-        path: /istio-demo
-        repoURL: https://github.com/ahmetceyhan/multi_ingress_controller_argocd_helm_chart.git
-        targetRevision: HEAD
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
-        syncOptions:
-          - Replace=false
-          - PruneLast=true
-          - CreateNamespace=true
+  destination:
+    name: ''
+    namespace: istio-system
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: istio-demo
+    repoURL: >-
+      https://github.com/ahmetceyhan/multi_ingress_controller_argocd_helm_chart.git
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  sources: []
+  project: istio-system
