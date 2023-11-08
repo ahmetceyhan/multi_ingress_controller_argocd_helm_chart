@@ -1,4 +1,4 @@
-ingress-nginx:
+istio-demo:
   #.Values.pilot for discovery and mesh wide config
 
   ## Discovery Settings
