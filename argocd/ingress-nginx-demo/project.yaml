@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  namespace: argocd
+  name: ingress-nginx-demo-project
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - name: in-cluster
+      namespace: ingress-nginx-demo
+      server: https://kubernetes.default.svc

@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress-nginx-demo2
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: ingress-nginx-demo2
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ingress-nginx-demo2
+    repoURL: 'https://github.com/ahmetceyhan/multi_ingress_controller_argocd_helm_chart.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  project: ingress-nginx-demo2-project
